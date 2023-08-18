@@ -16,12 +16,12 @@ import { UpdateBookDto } from './dto/update-book.dto';
 export class BookController {
   constructor(private bookService: BookService) {}
 
-  @Get()
+  @Get('getAllBooks')
   async getAllBook(): Promise<Book[]> {
     return this.bookService.findAll();
   }
 
-  @Post('newbook')
+  @Post('createbook')
   async createBook(
     @Body()
     book: CreateBookDto,
